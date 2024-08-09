@@ -1,0 +1,8 @@
+[build]
+  publish = "public"  # Change this to your build output directory
+  functions = "functions"  # Directory for serverless functions
+
+[dev]
+  command = "npm run dev"  # Command to start your development server
+  port = 3000  # Port for your development server
+  targetPort = 8888  # Port for Netlify Dev to proxy to
