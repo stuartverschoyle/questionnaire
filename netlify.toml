@@ -1,5 +1,5 @@
 [build]
-  publish = "public"  # Change this to your build output directory
+  publish = "public"  # Directory containing your index.html and other static files
   functions = "functions"  # Directory for serverless functions
 
 [dev]
