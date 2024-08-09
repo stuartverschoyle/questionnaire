@@ -1,6 +1,6 @@
 async function generateOverview(prompt, email) {
     try {
-      const response = await fetch('https://vjquestions.netlify.app/generate-overview', {
+      const response = await fetch('https://vjquestions.netlify.app/functions/generate-overview', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ prompt, email }),
