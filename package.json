@@ -9,5 +9,8 @@
     "express": "^4.19.2",
     "nodemailer": "^6.9.14",
     "nodemailer-sendgrid-transport": "^0.2.0"
+  },
+  "scripts": {
+    "build": "npm run build"
   }
 }
