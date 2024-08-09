@@ -2,7 +2,7 @@
   "name": "ai-questionnaire",
   "version": "1.0.0",
   "description": "A step-by-step questionnaire that generates an AI overview based on user answers and scraped data.",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
@@ -20,8 +20,8 @@
     "nodemailer-sendgrid-transport": "^0.2.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.7",
-    "netlify-cli": "^3.29.14"
+    "netlify-cli": "^3.29.14",
+    "nodemon": "^2.0.22"
   },
   "keywords": [],
   "author": "",

@@ -9,31 +9,36 @@ require('dotenv').config();
 pplx.auth(process.env.PERPLEXITY_API_KEY);
 
 const app = express();
-app.use(cors()); // Enable CORS
+app.use(cors());
 app.use(express.json());
+app.use(express.static('public'));
 
 app.post('/generate-overview', async (req, res) => {
-  const { prompt, email } = req.body;
-  const scrapedData = await scrapeWebsite('https://vistajet.com');
-  const combinedPrompt = createCombinedPrompt(prompt, scrapedData);
-
-  // Generate AI overview using Perplexity AI
-  let overview;
   try {
-    overview = await generateAIOverview(combinedPrompt);
-  } catch (error) {
-    console.error('Error generating AI overview:', error);
-    res.status(500).json({ message: 'Failed to generate AI overview', error: error.message || error });
-    return;
-  }
+    const { prompt, email } = req.body;
+    const scrapedData = await scrapeWebsite('https://vistajet.com');
+    const combinedPrompt = createCombinedPrompt(prompt, scrapedData);
 
-  // Send email with the overview
-  try {
-    await sendEmail(email, overview);
-    res.json({ message: 'Email sent successfully' });
+    // Generate AI overview using Perplexity AI
+    let overview;
+    try {
+      overview = await generateAIOverview(combinedPrompt);
+    } catch (error) {
+      console.error('Error generating AI overview:', error);
+      return res.status(500).json({ message: 'Failed to generate AI overview', error: error.message || error });
+    }
+
+    // Send email with the overview
+    try {
+      await sendEmail(email, overview);
+      return res.status(200).json({ message: 'Email sent successfully' });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      return res.status(500).json({ message: 'Failed to send email', error: error.message || error });
+    }
   } catch (error) {
-    console.error('Error sending email:', error);
-    res.status(500).json({ message: 'Failed to send email', error: error.message || error });
+    console.error('Error parsing request body:', error);
+    return res.status(400).json({ message: 'Invalid request body', error: error.message || error });
   }
 });
 
@@ -118,7 +123,7 @@ async function sendEmail(recipient, overview) {
   }
 }
 
-const PORT = 3000; // Change the port if needed
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });

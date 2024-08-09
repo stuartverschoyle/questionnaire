@@ -4,5 +4,5 @@
 
 [dev]
   command = "npm run dev"  # Command to start your development server
-  port = 3000  # Port for your development server
-  targetPort = 8888  # Port for Netlify Dev to proxy to
+  port = 8888  # Port for Netlify Dev to proxy to
+  targetPort = 3000  # Port for your development server
