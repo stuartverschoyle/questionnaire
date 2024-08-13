@@ -21,11 +21,21 @@ async function generateOverview(prompt, email) {
 }
 
 const questions = [
-  { id: 1, text: "Do you have pets?", options: ["yes", "no"] },
-  { id: 2, text: "Do you fly private?", options: ["yes", "no"] },
-  { id: 3, text: "Where to?", options: ["USA", "Europe", "Asia"] },
-  { id: 4, text: "Diet?", options: ["Vegan", "Meat", "Both"] },
-  { id: 5, text: "Children?", options: ["yes", "no"] },
+  { id: 1, text: "How often do you travel by private jet?", options: ["25-49 hours per year", "50+ hours per year", "Less than 25 hours per year"] },
+  { id: 2, text: "What is the primary purpose of your travel?", options: ["Business", "Leisure", "Mixed business and leisure"] },
+  { id: 3, text: "What are your preferred travel destinations?", options: ["Global (multiple continents)", "Within my continent", "Specific country or region"] },
+  { id: 4, text: "Are you currently a member of any private jet service or loyalty program?", options: ["Yes, with VistaJet", "Yes, with another provider", "No"] },
+  { id: 5, text: "Which membership option interests you most?", options: ["VJ25 (25-49 hours/year)", "Program (50+ hours/year)", "On-demand charter"] },
+  { id: 6, text: "What type of onboard experience do you value most?", options: ["Business suite", "Fine dining", "Wellness amenities"] },
+  { id: 7, text: "Are you interested in bespoke experiences or curated voyages?", options: ["Yes, very interested", "Somewhat interested", "Not interested"] },
+  { id: 8, text: "How important are VistaJet's environmental initiatives to you?", options: ["Very important", "Somewhat important", "Not a priority"] },
+  { id: 9, text: "How important is 24/7 concierge service to you when traveling?", options: ["Essential", "Nice to have", "Not important"] },
+  { id: 10, text: "Do you require any special assistance or services during your travel?", options: ["Yes, frequently", "Occasionally", "No"] },
+  { id: 11, text: "Are you interested in unique dining experiences while flying?", options: ["Very interested", "Somewhat interested", "Not a priority"] },
+  { id: 12, text: "How important is wellness to you during travel?", options: ["Very important", "Somewhat important", "Not a priority"] },
+  { id: 13, text: "Are you interested in exploring unique travel experiences beyond just flying?", options: ["Very interested", "Somewhat interested", "Not interested"] },
+  { id: 14, text: "Would you like to receive information about exclusive Private World offerings?", options: ["Yes, regularly", "Occasionally", "No, thank you"] },
+  { id: 15, text: "How did you hear about VistaJet?", options: ["Referral", "Online search", "Advertisement"] }
 ];
 
 let step = 0;
