@@ -30,7 +30,7 @@ const questions = [
   { id: 7, text: "Are you interested in bespoke experiences or curated voyages?", options: ["Yes, very interested", "Somewhat interested", "Not interested"] },
   { id: 8, text: "How important are VistaJet's environmental initiatives to you?", options: ["Very important", "Somewhat important", "Not a priority"] },
   { id: 9, text: "How important is 24/7 concierge service to you when traveling?", options: ["Essential", "Nice to have", "Not important"] },
-  { id: 10, text: "Do you require any special assistance or services during your travel?", options: ["Yes, frequently", "Occasionally", "No"] },
+  { id: 10, text: "Do you travel with pets?", options: ["Yes, frequently", "Occasionally", "No"] },
   { id: 11, text: "Are you interested in unique dining experiences while flying?", options: ["Very interested", "Somewhat interested", "Not a priority"] },
   { id: 12, text: "How important is wellness to you during travel?", options: ["Very important", "Somewhat important", "Not a priority"] },
   { id: 13, text: "Are you interested in exploring unique travel experiences beyond just flying?", options: ["Very interested", "Somewhat interested", "Not interested"] },

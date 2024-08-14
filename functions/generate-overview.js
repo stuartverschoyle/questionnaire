@@ -61,7 +61,7 @@ function createCombinedPrompt(userAnswers, scrapedData) {
     Based on the information from the VistaJet website, summarize all the benefits and accommodating facilities that VistaJet can offer. Here is the information from the VistaJet website:
     ${scrapedData}
 
-    Please provide a concise and comprehensive overview that combines the user's answers with the benefits and facilities offered by VistaJet in the form of a professional email signed off by The VistaJet Team. The email should have a call to action to contact the company. Dont have any * or ** in the email and increase the amount of information given. the contact email is privateworld@vistajet.com, Dont have a subject in the email body, start the email Dear Sir/Madam. Dont list the personal details provided or have any lits in the email response. Just a well layed out email. keep the email fewer than 200 words
+    Please provide a concise and comprehensive overview that combines the user's answers with the benefits and facilities offered by VistaJet in the form of a professional email signed off by The VistaJet Team. The email should have a call to action to contact the company. Dont have any * or ** in the email and increase the amount of information given. the contact email is privateworld@vistajet.com, Dont have a subject in the email body, start the email Dear Sir/Madam. Dont list the personal details provided or have any lits in the email response. Just a well layed out email. keep the email fewer than 250 words
   `;
 }
 
@@ -70,7 +70,7 @@ async function generateAIOverview(prompt) {
     const { data } = await pplx.post_chat_completions({
       model: 'llama-3.1-sonar-small-128k-online',
       messages: [
-        { role: 'system', content: 'Be precise and concise.' },
+        { role: 'system', content: 'You are a representative for Vistajet.com, you will be precise and concise and your tone of voice is profesional a if you were speaking to a high networth individual.' },
         { role: 'user', content: prompt }
       ]
     });
